@@ -19,5 +19,5 @@ data class Song(
     val releaseDate: String?, // Optional release date
     var isFavorite : Boolean= false
 ){
-
+    constructor() : this(0, "", "", "", 0, 0, "", "", false)
 }
