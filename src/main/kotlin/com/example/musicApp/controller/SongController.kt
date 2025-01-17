@@ -18,14 +18,14 @@ class SongController(private val songService: ServiceSong) {
 
     @GetMapping
     fun getAlSongs(): ResponseEntity<List<Song>> {
-        val produits = songService.getAllSongs()
-        return ResponseEntity.ok(produits)
+        val songs = songService.getAllSongs()
+        return ResponseEntity.ok(songs)
     }
 
     @GetMapping("/{id}")
     fun finSongById(@PathVariable id: Int): ResponseEntity<Song> {
-        val produit = songService.findSongById(id)
-        return ResponseEntity.ok(produit)
+        val song = songService.findSongById(id)
+        return ResponseEntity.ok(song)
     }
 
     @DeleteMapping("/{id}")
@@ -35,9 +35,9 @@ class SongController(private val songService: ServiceSong) {
     }
 
     @PutMapping("/{id}")
-    fun updateSongById(@PathVariable id: Int, @RequestBody nouveauSong: Song): ResponseEntity<Song> {
-        val nouveau = songService.updateSongById(id, nouveauSong)
-        return ResponseEntity.ok(nouveau)
+    fun updateSongById(@PathVariable id: Int, @RequestBody newSong: Song): ResponseEntity<Song> {
+        val new = songService.updateSongById(id, newSong)
+        return ResponseEntity.ok(new)
     }
 }
 
